@@ -224,10 +224,12 @@ local function CircleAnim(GuiObject, EndColour, StartColour)
 	Circle.ImageColor3 = StartColour or GuiObject.ImageColor3
 	Circle.ZIndex = 200
 	Circle.Parent = GuiObject
-	local Size = GuiObject.AbsoluteSize.X
-	TweenService:Create(Circle, TweenInfo.new(2), {ImageTransparency = 1, ImageColor3 = EndColour, Size = UDim2.fromOffset(Size,Size)}):Play()
-	wait(2)
-	Circle:Destroy()
+	Circle.SizeConstraint=Enum.SizeConstraint.RelativeXX
+	local Size = GuiObject.AbsoluteSize.X*2
+	local tw = TweenService:Create(Circle, TweenInfo.new(2), {ImageTransparency = 1, ImageColor3 = EndColour, Size = UDim2.fromOffset(Size,Size)})
+	tw:Play()
+	tw.Completed:wait()
+	Circle:destroy()
 end
 
 local Material = {}

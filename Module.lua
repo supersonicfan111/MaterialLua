@@ -217,13 +217,15 @@ end
 
 local function CircleAnim(GuiObject, EndColour, StartColour)
 	local Circle = Objects.new("Circle")
+	Circle.AnchorPoint=Vector2.new(.5,.5)
 	Circle.Size = UDim2.fromScale(0,0)
-	Circle.Position = UDim2.fromScale(0.5,0.5)
+	Circle.Position = UDim2.new(0.5,X,0.5,Y)
 	Circle.ImageColor3 = StartColour or GuiObject.ImageColor3
 	Circle.ZIndex = 200
 	Circle.Parent = GuiObject
 	local Size = GuiObject.AbsoluteSize.X
-	TweenService:Create(Circle, TweenInfo.new(2), {Position = UDim2.fromScale(0.5,0.5) - UDim2.fromOffset(Size/2,Size/2), ImageTransparency = 1, ImageColor3 = EndColour, Size = UDim2.fromOffset(Size,Size)}):Play()
+	local X,Y = GetXY()
+	TweenService:Create(Circle, TweenInfo.new(2), {ImageTransparency = 1, ImageColor3 = EndColour, Size = UDim2.fromOffset(Size,Size)}):Play()
 	wait(2)
 	Circle:Destroy()
 end

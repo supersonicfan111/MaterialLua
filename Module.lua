@@ -564,6 +564,7 @@ function Material.Load(Config)
 	local NewInstance = Objects.new("ScreenGui")
 	NewInstance.Name = Title
 	NewInstance.Parent = TargetParent
+	NewInstance.DisplayOrder = 1e9
 	
 	local MainFrame = Objects.new("Round")
 	MainFrame.Name = "MainFrame"
@@ -683,6 +684,18 @@ function Material.Load(Config)
 	
 	local ButtonTrack = {}
 	local PageTrack = {}
+	
+	function TabLibrary.Hide()
+		NewInstance.Enabled=false
+	end
+	
+	function TabLibrary.Show()
+		NewInstance.Enabled=true
+	end
+	
+	function TabLibrary.Destroy()
+		NewInstance:Destroy();
+	end
 	
 	function TabLibrary.Banner(BannerConfig)
 		local BannerText = BannerConfig.Text

@@ -104,21 +104,21 @@ local ActualTypes = {
 local Properties = {
 	RoundFrame = {
 		BackgroundTransparency = 1,
-		Image = "http://www.roblox.com/asset/?id=5554237731",
+		Image = "rbxassetid://5554237731",
 		ScaleType = Enum.ScaleType.Slice,
 		SliceCenter = Rect.new(3,3,297,297)
 	},
 	SmoothButton = {
 		AutoButtonColor = false,
 		BackgroundTransparency = 1,
-		Image = "http://www.roblox.com/asset/?id=5554237731",
+		Image = "rbxassetid://5554237731",
 		ScaleType = Enum.ScaleType.Slice,
 		SliceCenter = Rect.new(3,3,297,297)
 	},
 	Shadow = {
 		Name = "Shadow",
 		BackgroundTransparency = 1,
-		Image = "http://www.roblox.com/asset/?id=5554236805",
+		Image = "rbxassetid://5554236805",
 		ScaleType = Enum.ScaleType.Slice,
 		SliceCenter = Rect.new(23,23,277,277),
 		Size = UDim2.fromScale(1,1) + UDim2.fromOffset(30,30),
@@ -126,12 +126,12 @@ local Properties = {
 	},
 	Circle = {
 		BackgroundTransparency = 1,
-		Image = "http://www.roblox.com/asset/?id=867743272"
+		Image = "rbxassetid://867743272"
 	},
 	CircleButton = {
 		BackgroundTransparency = 1,
 		AutoButtonColor = false,
-		Image = "http://www.roblox.com/asset/?id=5554831670"
+		Image = "rbxassetid://5554831670"
 	},
 	Frame = {
 		BackgroundTransparency = 1,
@@ -169,13 +169,13 @@ local Properties = {
 		Name = "More",
 		AutoButtonColor = false,
 		BackgroundTransparency = 1,
-		Image = "http://www.roblox.com/asset/?id=5555108481",
+		Image = "rbxassetid://5555108481",
 		Size = UDim2.fromOffset(20,20),
 		Position = UDim2.fromScale(1,0.5) - UDim2.fromOffset(25,10)
 	},
 	NavBar = {
 		Name = "SheetToggle",
-		Image = "http://www.roblox.com/asset/?id=5572338973",
+		Image = "rbxassetid://5576422036",
 		BackgroundTransparency = 1,
 		Size = UDim2.fromOffset(20,20),
 		Position = UDim2.fromOffset(5,5),
@@ -836,7 +836,7 @@ function Material.Load(Config)
 			
 			local FetchURL = "rbxassetid://"..ImageID
 			
-			local Image = RunService:IsStudio() and "http://www.roblox.com/asset/?id=5472131383" or game:GetObjects(FetchURL)[1].Texture
+			local Image = RunService:IsStudio() and "rbxassetid://5472131383" or game:GetObjects(FetchURL)[1].Texture
 			
 			local NewImage = Objects.new(Button and "Round" or "SmoothButton")
 			NewImage.Name = ImageID
@@ -963,7 +963,7 @@ function Material.Load(Config)
 			
 			local DropdownButton = Objects.new("Round")
 			DropdownButton.Name = "Drop"
-			DropdownButton.Image = "http://www.roblox.com/asset/?id=5574299686"
+			DropdownButton.Image = "rbxassetid://5574299686"
 			DropdownButton.ScaleType = Enum.ScaleType.Stretch
 			DropdownButton.Size = UDim2.fromScale(1,1) - UDim2.fromOffset(4,4)
 			DropdownButton.Position = UDim2.fromOffset(2,2)
@@ -1072,7 +1072,7 @@ function Material.Load(Config)
 					
 					local Tick = Objects.new("Round")
 					Tick.ScaleType = Enum.ScaleType.Stretch
-					Tick.Image = "http://www.roblox.com/asset/?id=5554953789"
+					Tick.Image = "rbxassetid://5554953789"
 					Tick.ImageColor3 = Theme.ChipSetAccent
 					Tick.ImageTransparency = BuildTable[Key] and 0 or 1
 					Tick.Size = UDim2.fromScale(1,1) - UDim2.fromOffset(10,10)
@@ -1190,7 +1190,7 @@ function Material.Load(Config)
 					local Tick = Objects.new("Round")
 					Tick.Name = "Tick"
 					Tick.ScaleType = Enum.ScaleType.Stretch
-					Tick.Image = "http://www.roblox.com/asset/?id=5554953789"
+					Tick.Image = "rbxassetid://5554953789"
 					Tick.ImageColor3 = Theme.DataTableAccent
 					Tick.ImageTransparency = BuildTable[Key] and 0 or 0.7
 					Tick.Size = UDim2.fromScale(1,1) - UDim2.fromOffset(4,4)
@@ -1513,7 +1513,7 @@ function Material.Load(Config)
 			
 			local DotShadow = Objects.new("Round")
 			DotShadow.Name = "Shadow"
-			DotShadow.Image = "http://www.roblox.com/asset/?id=5554831957"
+			DotShadow.Image = "rbxassetid://5554831957"
 			DotShadow.ScaleType = Enum.ScaleType.Stretch
 			DotShadow.Size = UDim2.fromOffset(31,31)
 			DotShadow.Position = UDim2.fromOffset(-8,-8)

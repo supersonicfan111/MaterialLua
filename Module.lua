@@ -175,7 +175,7 @@ local Properties = {
 	},
 	NavBar = {
 		Name = "SheetToggle",
-		Image = "rbxassetid://5576422019",
+		Image = "rbxassetid://5576439039",
 		BackgroundTransparency = 1,
 		Size = UDim2.fromOffset(20,20),
 		Position = UDim2.fromOffset(5,5),

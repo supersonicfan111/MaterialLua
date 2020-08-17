@@ -126,7 +126,7 @@ local Properties = {
 	},
 	Circle = {
 		BackgroundTransparency = 1,
-		Image = "http://www.roblox.com/asset/?id=5554831670"
+		Image = "http://www.roblox.com/asset/?id=867743272"
 	},
 	CircleButton = {
 		BackgroundTransparency = 1,
@@ -218,6 +218,7 @@ end
 local function CircleAnim(GuiObject, EndColour, StartColour)
 	local Circle = Objects.new("Circle")
 	Circle.Size = UDim2.fromScale(0,0)
+	Circle.AnchorPoint=Vector2.new(.5,.5)
 	local X,Y = GetXY(GuiObject)
 	Circle.Position = UDim2.new(0,X,0,Y)
 	Circle.ImageColor3 = StartColour or GuiObject.ImageColor3

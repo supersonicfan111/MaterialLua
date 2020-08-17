@@ -219,7 +219,7 @@ local function CircleAnim(GuiObject, EndColour, StartColour)
 	local Circle = Objects.new("Circle")
 	Circle.Size = UDim2.fromScale(0,0)
 	Circle.AnchorPoint=Vector2.new(.5,.5)
-	local X,Y = GetXY(GuiObject)
+	local X,Y = Mouse.X-GuiObject.AbsolutePosition.x,Mouse.Y-GuiObject.AbsolutePosition.y
 	Circle.Position = UDim2.new(0,X,0,Y)
 	Circle.ImageColor3 = StartColour or GuiObject.ImageColor3
 	Circle.ZIndex = 200

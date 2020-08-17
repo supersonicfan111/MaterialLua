@@ -217,10 +217,9 @@ end
 
 local function CircleAnim(GuiObject, EndColour, StartColour)
 	local Circle = Objects.new("Circle")
-	Circle.AnchorPoint=Vector2.new(.5,.5)
 	Circle.Size = UDim2.fromScale(0,0)
 	local X,Y = GetXY(GuiObject)
-	Circle.Position = UDim2.new(0.5,X,0.5,Y)
+	Circle.Position = UDim2.new(0,X,0,Y)
 	Circle.ImageColor3 = StartColour or GuiObject.ImageColor3
 	Circle.ZIndex = 200
 	Circle.Parent = GuiObject

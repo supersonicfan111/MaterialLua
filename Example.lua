@@ -1,4 +1,4 @@
-local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/supersonicfan111/MaterialLua/master/Module.lua"))()
+local Material = require(script.core)
 
 local X = Material.Load({
 	Title = "ChibuHub",
@@ -56,8 +56,8 @@ local C2 = Y.Button({
 	Text="Randomise Slider";
 	Callback=function()
 		C.MinValue=math.random(1,200)
-		C.MaxValue=math.random(C.Min,C.Min+200)
-		C.Value=math.random(C.Min,C.Max)
+		C.MaxValue=math.random(C.MinValue,C.MinValue+200)
+		C.Value=math.random(C.MinValue,C.MaxValue)
 		C.Decimals=math.random(0,3)
 		C.Text = "Min " .. C.MinValue .. " | Max " .. C.MaxValue
 		print(C.MinValue,C.MaxValue,C.Value,C.Decimals,C.Text,C.RawValue)

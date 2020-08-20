@@ -2,10 +2,13 @@ local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/supe
 
 local X = Material.Load({
 	Title = "ChibuHub",
-	Style = 2,
+	Style = 3,
 	SizeX = 500,
 	SizeY = 350,
-	Theme = "Dark"
+	Theme = "Light",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(235,235,235)
+	}
 })
 
 local Y = X.New({
@@ -43,9 +46,22 @@ local C = Y.Slider({
 	Callback = function(Value)
 		print(Value)
 	end,
-	Min = 200,
-	Max = 400,
-	Def = 300
+	Min = 0,
+	Max = 1,
+	Decimals=2;
+	Value = 50
+})
+
+local C2 = Y.Button({
+	Text="Randomise Slider";
+	Callback=function()
+		C.MinValue=math.random(1,200)
+		C.MaxValue=math.random(C.Min,C.Min+200)
+		C.Value=math.random(C.Min,C.Max)
+		C.Decimals=math.random(0,3)
+		C.Text = "Min " .. C.MinValue .. " | Max " .. C.MaxValue
+		print(C.MinValue,C.MaxValue,C.Value,C.Decimals,C.Text,C.RawValue)
+	end
 })
 
 local D = Y.Dropdown({
@@ -126,6 +142,24 @@ local G = Y.ColorPicker({
 			X.Banner({
 				Text = "This changes the color of your ESP."
 			})
+		end
+	}
+})
+
+local H = Y.TextField({
+	Text = "Country",
+	Callback = function(Value)
+		print(Value)
+	end,
+	Menu = {
+		GB = function(self)
+			self.SetText("GB")
+		end,
+		JP = function(self)
+			self.SetText("JP")
+		end,
+		KO = function(self)
+			self.SetText("KO")
 		end
 	}
 })

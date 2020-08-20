@@ -2355,12 +2355,12 @@ function Material.Load(Config)
 				return SliderTitle.Text
 			end
 			
-			function SliderLibrary:SetMin(New)
+			function SliderLibrary:SetMinValue(New)
 				SliderMin = math.min(New,SliderMax)
 				Change(math.clamp(RawValue,SliderMin,SliderMax))
 			end
 			
-			function SliderLibrary:SetMax(New)
+			function SliderLibrary:SetMaxValue(New)
 				SliderMax = math.max(New,SliderMin+1)
 				Change(math.clamp(RawValue,SliderMin,SliderMax))
 			end
@@ -2386,11 +2386,11 @@ function Material.Load(Config)
 				return RawValue
 			end
 			
-			function SliderLibrary:GetMin()
+			function SliderLibrary:GetMinValue()
 				return SliderMin
 			end
 			
-			function SliderLibrary:GetMax()
+			function SliderLibrary:GetMaxValue()
 				return SliderMax
 			end
 			
